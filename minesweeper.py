@@ -168,7 +168,8 @@ class MinesweeperAI():
         self.knowledge = []
 
         # neighbor vectors
-        self.neighbor_vectors = ( (-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1))
+        self.neighbor_vectors = ((-1, -1), (-1, 0), (-1, 1), (0, -1),
+                                  (0, 1), (1, -1), (1, 0), (1, 1))
 
     def mark_mine(self, cell):
         """
@@ -309,12 +310,9 @@ class MinesweeperAI():
             1) have not already been chosen, and
             2) are not known to be mines
         """
-        move = ( random.randint(0, self.height - 1), random.randint(0, self.width - 1) )
+        move = (random.randint(0, self.height - 1), random.randint(0, self.width - 1))
         while move in self.moves_made or move in self.mines:
-            move = ( random.randint(0, self.height - 1), random.randint(0, self.width - 1) )
+            move = (random.randint(0, self.height - 1), random.randint(0, self.width - 1))
 
         return move
-        
-
-            
         
